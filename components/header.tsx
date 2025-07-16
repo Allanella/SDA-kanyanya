@@ -61,6 +61,7 @@ export function Header() {
           <MenuIcon className="h-6 w-6" />
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
+        {/* TODO: Implement mobile navigation functionality (e.g., using useState to toggle a sidebar or full-screen menu) */}
       </div>
     </header>
   )

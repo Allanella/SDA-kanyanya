@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 export const metadata = {
   title: "Seventh-day Adventist Church Kanyanya",
   description: "Official website for Seventh-day Adventist Church Kanyanya, located in Kampala, Uganda.",
-    generator: 'Allan'
+  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
