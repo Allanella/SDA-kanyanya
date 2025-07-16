@@ -14,8 +14,8 @@ export function Header() {
           alt="SDA Church Kanyanya Logo"
           className="h-10 w-10"
         />
-        {/* Adjusted font size for responsiveness */}
-        <span className="text-base md:text-lg font-semibold whitespace-nowrap">SDA Church Kanyanya</span>
+        {/* Adjusted font size for responsiveness, removed whitespace-nowrap */}
+        <span className="text-sm sm:text-base md:text-lg font-semibold">SDA Church Kanyanya</span>
       </Link>
       <nav className="hidden md:flex gap-6">
         <Link href="#home" className="text-sm font-medium hover:underline underline-offset-4">
@@ -61,7 +61,6 @@ export function Header() {
           <MenuIcon className="h-6 w-6" />
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
-        {/* TODO: Implement mobile navigation functionality (e.g., using useState to toggle a sidebar or full-screen menu) */}
       </div>
     </header>
   )
