@@ -22,15 +22,15 @@ export function ContactSection() {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MailIcon className="h-5 w-5 text-primary" />
-                <span>info@sdakanyanya.org (placeholder)</span>
+                <span>kanyanyasdachurchofficial@gmail.com</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <PhoneIcon className="h-5 w-5 text-primary" />
-                <span>+256 7XX XXX XXX (placeholder)</span>
+                <span>+256 700 966 715 </span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MessageCircleIcon className="h-5 w-5 text-primary" />
-                <span>WhatsApp: +256 7XX XXX XXX (placeholder)</span>
+                <span>WhatsApp: +256 700 966 715</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <span>P.O. Box 1491 Kampala Uganda</span>

@@ -6,20 +6,20 @@ import { CalendarIcon, NewspaperIcon } from "lucide-react"
 export function NewsEventsSection() {
   const newsItems = [
     {
-      title: "Church Bulletin: July 13, 2024",
+      title: "Church Bulletin: July 13, 2025",
       date: "July 12, 2024",
       description: "Latest announcements, prayer requests, and church news.",
       link: "#",
     },
     {
       title: "Youth Camp Registration Now Open!",
-      date: "July 1, 2024",
+      date: "July 1, 2025",
       description: "Sign up for our annual youth camp, August 15-20.",
       link: "#",
     },
     {
       title: "Community Health Fair Success",
-      date: "June 25, 2024",
+      date: "June 25, 2025",
       description: "Recap of our recent health fair and community outreach.",
       link: "#",
     },

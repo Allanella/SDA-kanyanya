@@ -27,13 +27,13 @@ export function GivingSection() {
             <BanknoteIcon className="h-12 w-12 text-primary" />
             <h3 className="text-xl font-semibold">Bank Transfer</h3>
             <p className="text-muted-foreground text-sm">
-              Bank Name: [Your Bank Name]
+              Bank Name: Stanchart
               <br />
               Account Name: Seventh-day Adventist Church Kanyanya
               <br />
-              Account Number: [Your Account Number]
+              Account Number: 0102002163900
               <br />
-              Swift Code: [Your Swift Code]
+              Swift Code: 2453
             </p>
             <p className="text-muted-foreground">
               Please include your name and purpose (e.g., Tithe, Offering) in the reference.
@@ -45,7 +45,7 @@ export function GivingSection() {
             <p className="text-muted-foreground text-sm">
               Network: [e.g., MTN Mobile Money / Airtel Money]
               <br />
-              Number: [Your Mobile Money Number]
+              Number: 0785639406
               <br />
               Reference: [Your Name / Tithe / Offering]
             </p>
