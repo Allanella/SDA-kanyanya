@@ -4,22 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 export function MinistersSection() {
   const ministers = [
     {
-      name: "Pastor Allan Baliddawa",
+      name: "Pastor Kisakye Simon",
       title: "Senior Pastor",
       bio: "Pastor Allan has been serving the Kanyanya community for over 10 years, dedicated to spiritual growth and community outreach.",
-      image: "/images/xavi.jpg",
+      image: "/images/pastor.jpg",
     },
     {
-      name: "Pr Kaggwa Roggers",
+      name: "Pr Ezekiel Oligye",
       title: "Associate Pastor",
-      bio: "Pr Roggers provides invaluable leadership and guidance, overseeing various church ministries and initiatives.",
-      image: "/images/kaggwa-Rodgers.jpg",
+      bio: "Pr Ezekiel provides invaluable leadership and guidance, overseeing various church ministries and initiatives.",
+      image: "/images/placeholder-user.jpg",
     },
     {
-      name: "Elder Christopher Nsowe",
+      name: "Mirembe Eddy",
       title: "First Elder",
-      bio: "Christopher is passionate about nurturing the next generation, leading our vibrant youth programs and activities.",
-      image: "/images/chris.jpg",
+      bio: "Elder Mirembe is passionate about nurturing the next generation, leading our vibrant youth programs and activities.",
+      image: "/images/mirembe.jpg",
     },
     {
       name: "Mrs Kigozi Margret",
