@@ -49,7 +49,7 @@ export function SermonsMediaSection() {
             </p>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link
-                href="https://www.youtube.com/live/yQDxvqisKB4?si=P2Qgn9RmY_uPUQgu"
+                href="https://www.youtube.com/live/CFt3vZMyXMM?si=Yxdt3_tZg8tLA-3t"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -61,7 +61,7 @@ export function SermonsMediaSection() {
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/42P1w1YaVIA"
+              src="images/live.jpg" // i want to try an image...........thumbnail
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -72,7 +72,7 @@ export function SermonsMediaSection() {
               <div className="mt-2 text-sm text-red-600">
                 Your browser does not support embedded videos. Please visit our{" "}
                 <a
-                  href="https://www.youtube.com/live/42P1w1YaVIA"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline text-blue-600"
