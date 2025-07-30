@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export function ContactSection() {
+  // Keeping these for your reference if you want to use later
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "YOUR_GOOGLE_MAPS_API_KEY"
   const mapQuery = encodeURIComponent("Seventhday Adventist Church Kanyanya, Gayaza Road, Kampala, Uganda")
 
@@ -51,11 +52,66 @@ export function ContactSection() {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src={`https://www.google.com/maps/embed/v1/place?key=${googleMapsApiKey}&q=${mapQuery}`}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.527796324001!2d32.590867815296645!3d0.3759955992707755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db9e3d6e2f4a7%3A0x5f880fd9af77e6a6!2sSeventh-day%20Adventist%20Church%20Kanyanya!5e0!3m2!1sen!2sug!4v1695912345678!5m2!1sen!2sug"
               title="Seventh-day Adventist Church Kanyanya Location"
               aria-label="Google Map showing Seventh-day Adventist Church Kanyanya"
             ></iframe>
           </div>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="max-w-3xl mx-auto mt-16 bg-white p-10 rounded-xl shadow-lg border border-gray-200">
+          <h3 className="text-2xl font-semibold mb-6 text-blue-900 tracking-wide">Send Us a Message</h3>
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                placeholder="Write your message here..."
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </section>

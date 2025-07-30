@@ -1,6 +1,24 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookIcon, HeartPulseIcon, DownloadIcon, LinkIcon } from "lucide-react"
+import React from "react"
+
+// Placeholder icon components for Prime Radio and 3ABN TV
+function PrimeRadioIcon() {
+  return (
+    <div className="h-12 w-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+      PR
+    </div>
+  )
+}
+
+function ThreeABNIcon() {
+  return (
+    <div className="h-12 w-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+      3ABN
+    </div>
+  )
+}
 
 export function ResourcesSection() {
   const resources = [
@@ -34,6 +52,20 @@ export function ResourcesSection() {
       description: "Watch inspiring Christian programming.",
       icon: LinkIcon,
       link: "https://www.hopechannel.com/",
+      external: true,
+    },
+    {
+      title: "Prime Radio",
+      description: "Tune into Prime Radio for uplifting music and messages.",
+      icon: PrimeRadioIcon,
+      link: "https://primeradio.example.com", // Replace with actual URL
+      external: true,
+    },
+    {
+      title: "3ABN TV",
+      description: "Watch inspiring Christian programming on 3ABN TV.",
+      icon: ThreeABNIcon,
+      link: "https://3abntv.org",
       external: true,
     },
   ]

@@ -45,6 +45,12 @@ export function MinistriesSection() {
       link: "#",
     },
     {
+      name: "Education Department",
+      description: "Promoting Christian education and academic excellence.",
+      icon: BookOpenIcon,
+      link: "#",
+    },
+    {
       name: "Personal Ministries",
       description: "Equipping members for evangelism and outreach.",
       icon: SparklesIcon,

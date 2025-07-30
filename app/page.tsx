@@ -2,12 +2,13 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { MinistersSection } from "@/components/ministers-section"
-import { MinistriesSection } from "@/components/ministries-section" // New import
+import { MinistriesSection } from "@/components/ministries-section"
 import { ServicesSection } from "@/components/services-section"
-import { SermonsMediaSection } from "@/components/sermons-media-section" // New import
-import { NewsEventsSection } from "@/components/news-events-section" // New import
-import { ResourcesSection } from "@/components/resources-section" // New import
-import { GivingSection } from "@/components/giving-section" // New import
+import { SermonsMediaSection } from "@/components/sermons-media-section"
+import { NewsEventsSection } from "@/components/news-events-section"
+import { ResourcesSection } from "@/components/resources-section"
+import { DonateSection } from "@/components/donate-section" // ✅ New import
+import { GivingSection } from "@/components/giving-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
@@ -19,12 +20,13 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <MinistersSection />
-        <MinistriesSection /> {/* New section */}
+        <MinistriesSection />
         <ServicesSection />
-        <SermonsMediaSection /> {/* New section */}
-        <NewsEventsSection /> {/* New section */}
-        <ResourcesSection /> {/* New section */}
-        <GivingSection /> {/* New section */}
+        <SermonsMediaSection />
+        <NewsEventsSection />
+        <ResourcesSection />
+        <DonateSection /> {/* ✅ Donate Section */}
+        <GivingSection />
         <ContactSection />
       </main>
       <Footer />
