@@ -49,7 +49,7 @@ export function SermonsMediaSection() {
             </p>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link
-                href="https://www.youtube.com/live/CFt3vZMyXMM?si=Yxdt3_tZg8tLA-3t" // live stream link placed here
+                href="https://www.youtube.com/live/_R1PvqZ0NxQ?si=SyoRphDiJGwpMagg" // ✅ UPDATED YOUTUBE LIVESTREAM LINK
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -58,30 +58,16 @@ export function SermonsMediaSection() {
             </Button>
             <p className="text-sm text-muted-foreground mt-2">(Link to your church's YouTube or Facebook livestream)</p>
           </div>
+
+          {/* Livestream Image Section */}
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src="images/live.jpg" // i want to try an image...........thumbnail// sabbath 26th july 2025
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-            {/* Moved fallback OUTSIDE iframe */}
-            <noscript>
-              <div className="mt-2 text-sm text-red-600">
-                Your browser does not support embedded videos. Please visit our{" "}
-                <a
-                  href=""
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-blue-600"
-                >
-                  YouTube channel
-                </a>{" "}
-                directly to watch the livestream.
-              </div>
-            </noscript>
+            <Image
+              src="/images/simon.jpg"
+              alt="Sabbath July 26, 2025"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
 

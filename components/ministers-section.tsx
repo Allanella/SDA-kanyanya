@@ -6,7 +6,7 @@ export function MinistersSection() {
     {
       name: "Pastor Kisakye Simon",
       title: "Senior Pastor",
-      bio: "Pastor Allan has been serving the Kanyanya community for over 10 years, dedicated to spiritual growth and community outreach.",
+      bio: "Pastor Kisakye has been serving the Kanyanya community for over 4 years, dedicated to spiritual growth and community outreach.",
       image: "/images/pastor.jpg",
     },
     {
