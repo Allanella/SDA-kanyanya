@@ -1,5 +1,11 @@
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card"
 
 export function MinistersSection() {
   const ministers = [
@@ -13,7 +19,7 @@ export function MinistersSection() {
       name: "Pr Ezekiel Oligye",
       title: "Associate Pastor",
       bio: "Pr Ezekiel provides invaluable leadership and guidance, overseeing various church ministries and initiatives.",
-      image: "/images/placeholder-user.jpg",
+      image: "/images/origye.jpg",
     },
     {
       name: "Mirembe Eddy",
@@ -34,18 +40,26 @@ export function MinistersSection() {
       id="ministers"
       className="w-full py-12 md:py-24 lg:py-32 bg-background px-6 sm:px-8 md:px-12 lg:px-16"
       style={{ boxSizing: "border-box" }}
+      aria-labelledby="ministers-heading"
     >
       <div className="max-w-7xl mx-auto">
         <div
           className="mb-12 text-center px-2 sm:px-4 md:px-8 flex flex-col items-center min-w-0"
           style={{ boxSizing: "border-box" }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+          <h2
+            id="ministers-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight"
+          >
             Our Spiritual Leaders
           </h2>
           <p
             className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed whitespace-normal break-words max-w-full px-2"
-            style={{ wordBreak: "break-word", overflowWrap: "break-word", boxSizing: "border-box" }}
+            style={{
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              boxSizing: "border-box",
+            }}
           >
             Meet the dedicated individuals who guide and serve our church family.
           </p>
@@ -55,21 +69,26 @@ export function MinistersSection() {
           {ministers.map((minister, index) => (
             <Card
               key={index}
-              className="flex flex-col items-center text-center p-6 shadow-md hover:shadow-lg transition-shadow duration-300 min-w-0"
+              className="flex flex-col items-center text-center p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 min-w-0"
             >
               <div className="w-36 h-36 rounded-full overflow-hidden mb-4 border-4 border-primary flex items-center justify-center bg-muted">
                 <Image
                   src={minister.image || "/placeholder.svg"}
                   width={144}
                   height={144}
-                  alt={minister.name}
+                  alt={minister.name || "Church leader"}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
 
               <CardHeader className="p-0 mb-2 min-w-0">
-                <CardTitle className="text-xl font-semibold leading-snug break-words">{minister.name}</CardTitle>
-                <CardDescription className="text-primary truncate">{minister.title}</CardDescription>
+                <CardTitle className="text-xl font-semibold leading-snug break-words">
+                  {minister.name}
+                </CardTitle>
+                <CardDescription className="text-primary truncate">
+                  {minister.title}
+                </CardDescription>
               </CardHeader>
 
               <CardContent className="p-0 text-muted-foreground min-w-0">

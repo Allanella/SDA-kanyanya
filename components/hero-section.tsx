@@ -67,13 +67,19 @@ export function HeroSection() {
             </div>
           </div>
 
-          <Image
-            src="/images/drone.png"
-            width={650}
-            height={450}
-            alt="Seventh-day Adventist Church Kanyanya Exterior"
-            className="mx-auto aspect-[4/3] rounded-xl object-cover sm:w-full shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out"
-          />
+          {/* Sticky Image Container */}
+          <div
+            className="relative lg:sticky lg:top-[4.5rem] lg:z-20"
+            style={{ overflow: "visible" }}
+          >
+            <Image
+              src="/images/drone.png"
+              width={650}
+              height={450}
+              alt="Seventh-day Adventist Church Kanyanya Exterior"
+              className="mx-auto aspect-[4/3] rounded-xl object-cover sm:w-full shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -41,9 +41,7 @@ export function ContactSection() {
                 <span>Church Office Hours: Mon-Fri, 9:00 AM - 5:00 PM</span>
               </div>
             </div>
-            <Button asChild className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="#">Send Us a Message (Contact Form Placeholder)</Link>
-            </Button>
+            
           </div>
           <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg">
             <iframe

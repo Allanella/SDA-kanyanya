@@ -25,7 +25,11 @@ export function Header() {
       {/* Desktop Nav */}
       <nav className="hidden md:flex gap-6">
         {["home", "about", "ministers", "ministries", "services", "sermons", "news-events", "resources", "giving", "contact"].map((id) => (
-          <Link key={id} href={`#${id}`} className="text-sm font-medium hover:underline underline-offset-4">
+          <Link
+            key={id}
+            href={`#${id}`}
+            className="text-sm font-medium hover:underline underline-offset-4"
+          >
             {id.replace("-", " ").replace(/\b\w/g, l => l.toUpperCase())}
           </Link>
         ))}

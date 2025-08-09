@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -5,6 +8,8 @@ import { PlayCircleIcon, GalleryHorizontalIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card"
 
 export function SermonsMediaSection() {
+  const [showLivestream, setShowLivestream] = useState(false)
+
   const recordedSermons = [
     {
       title: "Revival and Reformation",
@@ -47,22 +52,35 @@ export function SermonsMediaSection() {
             <p className="text-muted-foreground">
               Join us live every Sabbath for our Divine Service and other special programs.
             </p>
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link
-                href="https://www.youtube.com/live/_R1PvqZ0NxQ?si=SyoRphDiJGwpMagg" // ✅ UPDATED YOUTUBE LIVESTREAM LINK
-                target="_blank"
-                rel="noopener noreferrer"
+
+            {!showLivestream && (
+              <Button
+                onClick={() => setShowLivestream(true)}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                <PlayCircleIcon className="mr-2 h-5 w-5" /> Watch Live on YouTube
-              </Link>
-            </Button>
-            <p className="text-sm text-muted-foreground mt-2">(Link to your church's YouTube or Facebook livestream)</p>
+                <PlayCircleIcon className="mr-2 h-5 w-5" />
+                Watch Live on YouTube
+              </Button>
+            )}
+
+            {showLivestream && (
+              <div className="aspect-video w-full max-w-3xl mt-4 rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  // ✅ Fixed livestream link here
+                  src="https://www.youtube.com/embed/HaP007qT5HE?autoplay=1"
+                  title="YouTube Livestream"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            )}
           </div>
 
-          {/* Livestream Image Section */}
+          {/* Livestream Image */}
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
             <Image
-              src="/images/simon.jpg"
+              src="/images/kiyimba.jpg"
               alt="Sabbath July 26, 2025"
               fill
               className="object-cover"
@@ -71,7 +89,7 @@ export function SermonsMediaSection() {
           </div>
         </div>
 
-        {/* Recorded Sermons Section */}
+        {/* Recorded Sermons */}
         <div className="space-y-4 mb-12">
           <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl">Recorded Sermons</h3>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
@@ -105,7 +123,7 @@ export function SermonsMediaSection() {
           </div>
         </div>
 
-        {/* Photo Galleries Section */}
+        {/* Photo Galleries */}
         <div className="space-y-4">
           <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl">Photo Galleries</h3>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
