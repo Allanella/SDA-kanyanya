@@ -38,7 +38,7 @@ export function MinistersSection() {
   return (
     <section
       id="ministers"
-      className="w-full py-12 md:py-24 lg:py-32 bg-background px-6 sm:px-8 md:px-12 lg:px-16"
+      className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background px-6 sm:px-8 md:px-12 lg:px-16"
       style={{ boxSizing: "border-box" }}
       aria-labelledby="ministers-heading"
     >
@@ -49,7 +49,7 @@ export function MinistersSection() {
         >
           <h2
             id="ministers-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight"
+            className=" text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight"
           >
             Our Spiritual Leaders
           </h2>

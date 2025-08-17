@@ -35,11 +35,11 @@ export function SermonsMediaSection() {
   ]
 
   return (
-    <section id="sermons" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="sermons" className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6 text-center">
         {/* Header */}
         <div className="space-y-4 mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sermons & Media</h2>
+          <h2 className=" text-3xl font-bold tracking-tighter sm:text-5xl">Sermons & Media</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
             Catch up on our latest sermons, watch our livestream, and browse photo galleries from church events.
           </p>

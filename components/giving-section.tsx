@@ -4,10 +4,10 @@ import { DollarSignIcon, BanknoteIcon, SmartphoneIcon } from "lucide-react"
 
 export function GivingSection() {
   return (
-    <section id="giving" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="giving" className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6 text-center">
         <div className="space-y-4 mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Online Giving / Tithes & Offerings</h2>
+          <h2 className="scroll-mt-20 text-3xl font-bold tracking-tighter sm:text-5xl">Online Giving / Tithes & Offerings</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
             Your faithful contributions enable us to continue our mission and ministries. Thank you for your generosity!
           </p>

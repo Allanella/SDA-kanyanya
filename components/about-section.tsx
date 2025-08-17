@@ -14,7 +14,7 @@ export function AboutSection() {
               boxSizing: "border-box",
             }}
           >
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground leading-snug whitespace-normal break-words">
+            <h2 className="scroll-mt-18 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground leading-snug whitespace-normal break-words">
               Our Mission and Vision
             </h2>
 

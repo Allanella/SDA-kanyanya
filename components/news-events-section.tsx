@@ -50,7 +50,7 @@ export function NewsEventsSection() {
   ]
 
   return (
-    <section id="news-events" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="news-events" className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6 text-center">
         <div className="space-y-4 mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">News & Events</h2>

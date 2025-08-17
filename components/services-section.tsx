@@ -4,7 +4,7 @@ import { CalendarDaysIcon, BookOpenIcon, HandshakeIcon, MusicIcon } from "lucide
 
 export function ServicesSection() {
   return (
-    <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+    <section id="services" className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-muted">
       <div className="container px-4 md:px-6 text-center">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Worship Schedule</h2>

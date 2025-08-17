@@ -83,10 +83,10 @@ export function MinistriesSection() {
   ]
 
   return (
-    <section id="ministries" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="ministries" className=" scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6 text-center">
         <div className="space-y-4 mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Ministries</h2>
+          <h2 className=" text-3xl font-bold tracking-tighter sm:text-5xl">Our Ministries</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
             Discover the various ministries dedicated to serving our church and community.
           </p>

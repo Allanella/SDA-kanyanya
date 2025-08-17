@@ -6,7 +6,7 @@ import { MinistriesSection } from "@/components/ministries-section"
 import { ServicesSection } from "@/components/services-section"
 import { SermonsMediaSection } from "@/components/sermons-media-section"
 import { NewsEventsSection } from "@/components/news-events-section"
-import { ResourcesSection } from "@/components/resources-section"
+//import { ResourcesSection } from "@/components/resources-section"
 import { DonateSection } from "@/components/donate-section" // ✅ New import
 import { GivingSection } from "@/components/giving-section"
 import { ContactSection } from "@/components/contact-section"
@@ -24,7 +24,7 @@ export default function HomePage() {
         <ServicesSection />
         <SermonsMediaSection />
         <NewsEventsSection />
-        <ResourcesSection />
+        
         <DonateSection /> {/* ✅ Donate Section */}
         <GivingSection />
         <ContactSection />

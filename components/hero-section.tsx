@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden"
+      className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-pattern-overlay opacity-10 z-0"></div>
 
