@@ -24,7 +24,7 @@ export default function HomePage() {
         <ServicesSection />
         <SermonsMediaSection />
         <NewsEventsSection />
-        
+      
         <DonateSection /> {/* ✅ Donate Section */}
         <GivingSection />
         <ContactSection />

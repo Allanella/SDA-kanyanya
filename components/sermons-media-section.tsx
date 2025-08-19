@@ -67,7 +67,7 @@ export function SermonsMediaSection() {
               <div className="aspect-video w-full max-w-3xl mt-4 rounded-xl overflow-hidden shadow-lg">
                 <iframe
                   // ✅ Fixed livestream link here
-                  src="https://www.youtube.com/embed/HaP007qT5HE?autoplay=1"
+                  src="https://www.youtube.com/embed/_kRaPZ_rJfk?autoplay=1"
                   title="YouTube Livestream"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -80,7 +80,7 @@ export function SermonsMediaSection() {
           {/* Livestream Image */}
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
             <Image
-              src="/images/kiyimba.jpg"
+              src="/images/ndide.jpg"
               alt="Sabbath July 26, 2025"
               fill
               className="object-cover"
