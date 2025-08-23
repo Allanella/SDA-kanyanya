@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,54 @@ import { PlayCircleIcon, GalleryHorizontalIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card"
 
 export function SermonsMediaSection() {
-  const [showLivestream, setShowLivestream] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMinimized, setIsMinimized] = useState(false)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const dragRef = useRef<HTMLDivElement | null>(null)
+  const isDragging = useRef(false)
+  const offset = useRef({ x: 0, y: 0 })
+
+  const livestreamLink = "https://www.youtube.com/live/mA73bWb2P8I?si=ZjyAOXJYRkkZEFF4"
+
+  // Convert any YouTube link to embed URL
+  const getEmbedLink = (link: string) => {
+    try {
+      const url = new URL(link)
+      let videoId = ""
+
+      if (url.hostname === "youtu.be") {
+        // short link
+        videoId = url.pathname.slice(1)
+      } else if (
+        url.hostname === "www.youtube.com" ||
+        url.hostname === "youtube.com"
+      ) {
+        if (url.pathname.startsWith("/watch")) {
+          // standard watch link
+          videoId = url.searchParams.get("v") || ""
+        } else if (url.pathname.startsWith("/live/")) {
+          // /live/{id}
+          videoId = url.pathname.split("/live/")[1]
+        } else if (url.pathname.startsWith("/live_stream")) {
+          // channel livestream
+          const channelId = url.searchParams.get("channel")
+          if (channelId) {
+            return `https://www.youtube.com/embed/live_stream?channel=${channelId}&autoplay=1`
+          }
+        } else if (url.pathname.startsWith("/embed/")) {
+          // already embed link
+          return link
+        }
+      }
+
+      if (!videoId) return ""
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1`
+    } catch {
+      return ""
+    }
+  }
+
+  const embedLink = getEmbedLink(livestreamLink)
 
   const recordedSermons = [
     {
@@ -34,6 +81,27 @@ export function SermonsMediaSection() {
     },
   ]
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current || !dragRef.current) return
+      setPosition({ x: e.clientX - offset.current.x, y: e.clientY - offset.current.y })
+    }
+    const handleMouseUp = () => { isDragging.current = false }
+    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mouseup", handleMouseUp)
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("mouseup", handleMouseUp)
+    }
+  }, [])
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!dragRef.current) return
+    isDragging.current = true
+    const rect = dragRef.current.getBoundingClientRect()
+    offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
+  }
+
   return (
     <section id="sermons" className="scroll-mt-20 w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6 text-center">
@@ -53,34 +121,21 @@ export function SermonsMediaSection() {
               Join us live every Sabbath for our Divine Service and other special programs.
             </p>
 
-            {!showLivestream && (
+            {!isModalOpen && (
               <Button
-                onClick={() => setShowLivestream(true)}
+                onClick={() => setIsModalOpen(true)}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 <PlayCircleIcon className="mr-2 h-5 w-5" />
                 Watch Live on YouTube
               </Button>
             )}
-
-            {showLivestream && (
-              <div className="aspect-video w-full max-w-3xl mt-4 rounded-xl overflow-hidden shadow-lg">
-                <iframe
-                  // ✅ Fixed livestream link here
-                  src="https://www.youtube.com/embed/_kRaPZ_rJfk?autoplay=1"
-                  title="YouTube Livestream"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            )}
           </div>
 
           {/* Livestream Image */}
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
             <Image
-              src="/images/ndide.jpg"
+              src="/images/jeny.jpg"
               alt="Sabbath July 26, 2025"
               fill
               className="object-cover"
@@ -159,6 +214,52 @@ export function SermonsMediaSection() {
           </div>
         </div>
       </div>
+
+      {/* Draggable & Minimizable Livestream Modal */}
+      {isModalOpen && embedLink && (
+        <div
+          ref={dragRef}
+          onMouseDown={handleMouseDown}
+          className={`fixed z-50 bg-black rounded-lg shadow-lg overflow-hidden cursor-move transition-all duration-300 ${
+            isMinimized
+              ? "w-64 h-36 bottom-4 right-4"
+              : "w-full max-w-4xl h-[480px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          }`}
+          style={{
+            left: isMinimized ? position.x || undefined : undefined,
+            top: isMinimized ? position.y || undefined : undefined,
+          }}
+        >
+          <iframe
+            src={embedLink}
+            title="Church Livestream"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
+
+          {/* Controls */}
+          <div className="absolute top-2 right-2 flex gap-2">
+            <button
+              onClick={() => setIsMinimized(!isMinimized)}
+              className="text-white bg-gray-700 px-2 py-1 rounded hover:bg-gray-800"
+            >
+              {isMinimized ? "Expand" : "Minimize"}
+            </button>
+            <button
+              onClick={() => {
+                setIsModalOpen(false)
+                setIsMinimized(false)
+                setPosition({ x: 0, y: 0 })
+              }}
+              className="text-white bg-red-600 px-2 py-1 rounded hover:bg-red-700"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

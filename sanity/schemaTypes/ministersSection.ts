@@ -1,46 +1,69 @@
-import { defineField, defineType } from 'sanity'
+import { defineType, defineField } from "sanity"
 
 export const ministersSection = defineType({
-  name: 'ministersSection',
-  title: 'Ministers Section',
-  type: 'document',
+  name: "ministersSection",
+  title: "Ministers Section",
+  type: "document",
   fields: [
     defineField({
-      name: 'heading',
-      title: 'Section Heading',
-      type: 'string',
-      description: 'Main heading for the ministers section, e.g., "Our Spiritual Leaders"',
+      name: "heading",
+      title: "Heading",
+      type: "string",
+      description: "Section heading (e.g., 'Our Spiritual Leaders')",
     }),
     defineField({
-      name: 'subheading',
-      title: 'Section Subheading',
-      type: 'text',
-      description: 'Brief description for the ministers section',
+      name: "subheading",
+      title: "Subheading",
+      type: "text",
+      description: "Section subheading (optional)",
     }),
     defineField({
-      name: 'ministers',
-      title: 'Ministers List',
-      type: 'array',
+      name: "ministers",
+      title: "Ministers",
+      type: "array",
       of: [
-        defineField({
-          name: 'minister', // Add a name for the object type
-          title: 'Minister',
-          type: 'object',
+        {
+          type: "object",
           fields: [
-            { name: 'name', type: 'string', title: 'Full Name' },
-            { name: 'title', type: 'string', title: 'Position / Title' },
-            { name: 'bio', type: 'text', title: 'Biography' },
             {
-              name: 'image',
-              type: 'image',
-              title: 'Profile Image',
-              options: { hotspot: true },
-              description: 'Upload a portrait of the minister',
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "bio",
+              title: "Bio",
+              type: "text",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
             },
           ],
-        }),
+          preview: {
+            select: {
+              title: "name",
+              subtitle: "title",
+              media: "image",
+            },
+          },
+        },
       ],
-      description: 'List of all ministers with their name, title, bio, and image',
     }),
   ],
+  preview: {
+    select: {
+      title: "heading",
+      subtitle: "subheading",
+    },
+  },
 })

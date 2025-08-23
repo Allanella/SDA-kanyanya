@@ -14,6 +14,51 @@ export function HeroSection() {
   const isDragging = useRef(false)
   const offset = useRef({ x: 0, y: 0 })
 
+  // Paste any YouTube link here
+  const youtubeLink = "https://www.youtube.com/live/mA73bWb2P8I?si=ZjyAOXJYRkkZEFF4"
+
+  // Universal YouTube link parser
+  const getEmbedLink = (link: string) => {
+    try {
+      if (link.includes("embed/")) {
+        // Already an embed link
+        return link
+      }
+
+      if (link.includes("live_stream?channel=")) {
+        // Channel livestream
+        return link
+      }
+
+      const url = new URL(link)
+      let videoId = ""
+
+      if (url.hostname === "youtu.be") {
+        // short link: youtu.be/VIDEO_ID
+        videoId = url.pathname.slice(1)
+      } else if (
+        url.hostname === "www.youtube.com" ||
+        url.hostname === "youtube.com"
+      ) {
+        if (url.pathname.startsWith("/watch")) {
+          // watch link: youtube.com/watch?v=VIDEO_ID
+          videoId = url.searchParams.get("v") || ""
+        } else if (url.pathname.startsWith("/live/")) {
+          // live link: youtube.com/live/VIDEO_ID
+          videoId = url.pathname.split("/live/")[1]
+        }
+      }
+
+      if (!videoId) return ""
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1`
+    } catch {
+      return ""
+    }
+  }
+
+  const embedLink = getEmbedLink(youtubeLink)
+
+  // Dragging effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging.current || !dragRef.current) return
@@ -77,10 +122,10 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Right Column: Cards stacked vertically */}
+            {/* Right Column: Cards */}
             <div className="flex flex-col gap-6 w-full lg:w-1/2 -mt-12">
 
-              {/* Worship & Study Times Card */}
+              {/* Worship & Study Times */}
               <Card className="bg-white/80 text-primary p-6 rounded-lg shadow-xl backdrop-blur-sm flex flex-col">
                 <CardHeader className="p-0 mb-3">
                   <CardTitle className="text-xl font-bold text-center">
@@ -103,7 +148,7 @@ export function HeroSection() {
                 </CardContent>
               </Card>
 
-              {/* Quick Links Card */}
+              {/* Quick Links */}
               <Card className="bg-white/80 text-primary p-4 rounded-lg shadow-xl backdrop-blur-sm flex flex-col justify-start">
                 <CardHeader className="p-0 mb-3">
                   <CardTitle className="text-xl font-bold text-center">
@@ -111,7 +156,6 @@ export function HeroSection() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 flex flex-col gap-3 justify-start">
-                  {/* Watch Livestream Button opens modal */}
                   <Button
                     onClick={() => setIsModalOpen(true)}
                     className="bg-red-500 text-white font-semibold px-6 py-2 text-lg w-full transform hover:scale-105 transition-transform duration-300"
@@ -140,8 +184,8 @@ export function HeroSection() {
         </div>
       </section>
 
-      {/* Draggable & Minimizable Livestream Modal */}
-      {isModalOpen && (
+      {/* Livestream Modal */}
+      {isModalOpen && embedLink && (
         <div
           ref={dragRef}
           onMouseDown={handleMouseDown}
@@ -155,9 +199,8 @@ export function HeroSection() {
             top: isMinimized ? position.y || undefined : undefined,
           }}
         >
-          {/* Correct YouTube Embed */}
           <iframe
-            src="https://www.youtube.com/embed/_kRaPZ_rJfk?autoplay=1"
+            src={embedLink}
             title="Church Livestream"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
