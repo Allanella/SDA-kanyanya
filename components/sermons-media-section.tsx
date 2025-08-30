@@ -15,7 +15,7 @@ export function SermonsMediaSection() {
   const isDragging = useRef(false)
   const offset = useRef({ x: 0, y: 0 })
 
-  const livestreamLink = "https://www.youtube.com/live/mA73bWb2P8I?si=ZjyAOXJYRkkZEFF4"
+  const livestreamLink = "https://www.youtube.com/live/GFkRShccqpo?si=t9GI6wh2_z4HLfGy"
 
   // Convert any YouTube link to embed URL
   const getEmbedLink = (link: string) => {
@@ -133,12 +133,12 @@ export function SermonsMediaSection() {
           </div>
 
           {/* Livestream Image */}
-          <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative">
+          <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative bg-black">
             <Image
-              src="/images/jeny.jpg"
-              alt="Sabbath July 26, 2025"
+              src="/images/camp.jpg"
+              alt="Sabbath August 30, 2025"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
