@@ -15,7 +15,7 @@ export function HeroSection() {
   const offset = useRef({ x: 0, y: 0 })
 
   // Paste any YouTube link here
-  const youtubeLink = "https://www.youtube.com/live/GFkRShccqpo?si=t9GI6wh2_z4HLfGy"
+  const youtubeLink = "https://www.youtube.com/watch?v=xPBAtZRDuHo"
 
   // Universal YouTube link parser
   const getEmbedLink = (link: string) => {
