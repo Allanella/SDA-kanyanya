@@ -15,7 +15,7 @@ export function SermonsMediaSection() {
   const isDragging = useRef(false)
   const offset = useRef({ x: 0, y: 0 })
 
-  const livestreamLink = "https://www.youtube.com/live/mRLrGiUJO6w?si=eJATksMUqQJoE-_m"
+  const livestreamLink = "https://www.youtube.com/watch?v=xPBAtZRDuHo"
 
   // Convert any YouTube link to embed URL
   const getEmbedLink = (link: string) => {
