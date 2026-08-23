@@ -15,7 +15,7 @@ export function SermonsMediaSection() {
   const isDragging = useRef(false)
   const offset = useRef({ x: 0, y: 0 })
 
-  const livestreamLink = "https://www.youtube.com/watch?v=xPBAtZRDuHo"
+  const livestreamLink = "https://www.youtube.com/live/PRnkMUisbUM?si=O5PsycuGnK_E85NX"
 
   // Convert any YouTube link to embed URL
   const getEmbedLink = (link: string) => {
@@ -57,7 +57,15 @@ export function SermonsMediaSection() {
 
   const embedLink = getEmbedLink(livestreamLink)
 
+  // 1. ADDED THUMBNAIL IN THE SERMONS ARRAY BELOW
   const recordedSermons = [
+    {
+      title: "New Sermon Title",
+      preacher: "Speaker Name",
+      date: "August 2026",
+      thumbnail: "/images/thumb.jpg", // <--- HERE IS YOUR THUMBNAIL
+      link: "https://youtu.be/your-link-here",
+    },
     {
       title: "Revival and Reformation",
       preacher: "Pastor Mulindwa Patrick",
@@ -132,11 +140,11 @@ export function SermonsMediaSection() {
             )}
           </div>
 
-          {/* Livestream Image */}
+          {/* 2. ALSO UPDATED THE LIVESTREAM HERO IMAGE HERE */}
           <div className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg relative bg-black">
             <Image
-              src="/images/camp.jpg"
-              alt="Sabbath August 30, 2025"
+              src="/images/thumb.jpg" // <--- CHANGED FROM /images/camp.jpg TO /images/thumb.jpg
+              alt="Sabbath Service"
               fill
               className="object-contain"
               priority
